@@ -22,9 +22,11 @@ window.addEventListener('load',function(){
                 if(this.game.player.y === this.game.height - this.game.player.height)
                     this.game.keys.push(' ');
             });
-            window.addEventListener("touchcancel", e=>{
-                this.game.keys.splice(this.game.keys[0], 1);
-                this.game.player.speedY = this.game.player.maxSpeed;
+            window.addEventListener("touchend", e=>{
+                if(this.game.keys.indexOf(' ') > -1){
+                    this.game.keys.splice(this.game.keys[0], 1);
+                    this.game.player.speedY = this.game.player.maxSpeed;
+                }
             });
         }
     }
