@@ -262,7 +262,7 @@ window.addEventListener('load',function(){
                     barrier.markedForDeletion = true;
                     if(barrier.type === 'cat')
                         this.catsSaved++;
-                    else {this.gameOver = true if(this.catsSaved === 10) this.gameOver = true;};
+                    else {this.gameOver = true; if(this.catsSaved === 10) this.gameOver = true;};
                 }
                         
             });
