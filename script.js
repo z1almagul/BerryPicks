@@ -10,7 +10,7 @@ window.addEventListener('load',function(){
             this.game = game;
             window.addEventListener('keydown', e => {
                 if(this.game.player.y === this.game.height - this.game.player.height)
-                if(e.key === ' ' && this.game.keys.indexOf(e.key) === -1)
+                if((e.key === ' ' || e.keys === 'ArrowUp')&& this.game.keys.indexOf(e.key) === -1)
                     this.game.keys.push(e.key);
                 document.getElementById('info').style.display = "none";
                 document.getElementById('title').style.display = "none";
@@ -46,7 +46,7 @@ window.addEventListener('load',function(){
             this.frameY = 0;
             this.maxFrame = 1;
             this.speedY = 0;
-            this.maxSpeed = 2;
+            this.maxSpeed = 1.5;
             this.image = document.getElementById('player');
             this.powerUp = false;
             this.powerUpTimer = 0;
@@ -55,7 +55,7 @@ window.addEventListener('load',function(){
 
         update(deltaTime){
             //moving the player
-            if(this.game.keys.includes(' ')){                
+            if(this.game.keys.includes(' ') || this.game.keys.includes('ArrowUp')){                
                 this.speedY = -this.maxSpeed * 5;
                 this.y += this.speedY;
             }else {this.speedY = this.maxSpeed;
@@ -65,8 +65,9 @@ window.addEventListener('load',function(){
             if(this.y > this.game.height - this.height)
                 this.y = this.game.height - this.height;
             //top boundary
-                else if(this.y < this.game.height - 2.5 * this.height)
-                    this.y = this.game.height - 2.5 * this.height;           
+                else if(this.y < this.game.height - 2.5 * this.height){
+                    this.game.keys.splice(0, 1);
+                    this.y = this.game.height - 2.5 * this.height;}          
         }
 
         draw(context){
