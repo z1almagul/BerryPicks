@@ -67,7 +67,10 @@ window.addEventListener('load',function(){
             //top boundary
                 else if(this.y < this.game.height - 2.5 * this.height){
                     this.game.keys.splice(0, 1);
-                    this.y = this.game.height - 2.5 * this.height;}          
+                    this.y = this.game.height - 2.5 * this.height;
+                    var audio = new Audio('assets/jump.mp3');
+                    audio.play();
+                }          
         }
 
         draw(context){
@@ -261,9 +264,16 @@ window.addEventListener('load',function(){
                 barrier.update();
                 if(this.checkCollision(this.player, barrier)){
                     barrier.markedForDeletion = true;
-                    if(barrier.type === 'cat')
+                    if(barrier.type === 'cat'){
                         this.catsSaved++;
-                    else {this.gameOver = true; if(this.catsSaved === 10) this.gameOver = true;};
+                        var audio = new Audio('assets/correct.mp3');
+                        audio.play();
+                    }
+                    else {this.gameOver = true;
+                          var audio = new Audio('assets/wrong.mp3');
+                        audio.play();
+                          if(this.catsSaved === 10) this.gameOver = true;
+                         };
                 }
                         
             });
