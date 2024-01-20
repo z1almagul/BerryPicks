@@ -10,7 +10,7 @@ window.addEventListener('load',function(){
             this.game = game;
             window.addEventListener('keydown', e => {
                 if(this.game.player.y === this.game.height - this.game.player.height)
-                if((e.key === ' ' || e.keys === 'ArrowUp')&& this.game.keys.indexOf(e.key) === -1)
+                if((e.key === ' ' || e.key === 'ArrowUp')&& this.game.keys.indexOf(e.key) === -1)
                     this.game.keys.push(e.key);
                 document.getElementsByTagName('h1')[0].style.display = "none";
                 document.getElementsByTagName('p')[0].style.display = "none";
