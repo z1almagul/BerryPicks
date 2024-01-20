@@ -12,8 +12,9 @@ window.addEventListener('load',function(){
                 if(this.game.player.y === this.game.height - this.game.player.height)
                 if((e.key === ' ' || e.keys === 'ArrowUp')&& this.game.keys.indexOf(e.key) === -1)
                     this.game.keys.push(e.key);
-                document.getElementsByTagName('h1').style.display = "none";
-                document.getElementsByTagName('p').style.display = "none";
+                document.getElementsByTagName('h1')[0].style.display = "none";
+                document.getElementsByTagName('p')[0].style.display = "none";
+                document.getElementsByTagName('p')[1].style.display = "none";
             });
             window.addEventListener('keyup', e => {
                 if(this.game.keys.indexOf(e.key) > -1){
@@ -23,8 +24,9 @@ window.addEventListener('load',function(){
             window.addEventListener("touchstart", e=>{
                 if(this.game.player.y === this.game.height - this.game.player.height)
                     this.game.keys.push(' ');
-                document.getElementsByTagName('h1').style.display = "none";
-                document.getElementsByTagName('p').style.display = "none";
+                document.getElementsByTagName('h1')[0].style.display = "none";
+                document.getElementsByTagName('p')[0].style.display = "none";
+                document.getElementsByTagName('p')[1].style.display = "none";
             });
             window.addEventListener("touchend", e=>{
                 if(this.game.keys.indexOf(' ') > -1){
