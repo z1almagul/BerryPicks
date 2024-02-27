@@ -9,6 +9,8 @@ window.addEventListener('load',function(){
         constructor(game){
             this.game = game;
             window.addEventListener('keydown', e => {
+                if((e.key === 'ArrowRight' || e.key === 'ArrowLeft') && this.game.keys.indexOf(e.key) === -1)
+                    this.game.keys.push(e.key);
                 if(this.game.player.y === this.game.height - this.game.player.height)
                 if((e.key === ' ' || e.key === 'ArrowUp')&& this.game.keys.indexOf(e.key) === -1)
                     this.game.keys.push(e.key);
@@ -63,6 +65,14 @@ window.addEventListener('load',function(){
             }else {this.speedY = this.maxSpeed;
                     this.y +=this.speedY;
             }
+            if(this.game.keys.includes('ArrowRight')){
+                this.speedY = this.maxSpeed * 3;
+                this.x += this.speedY;
+            }
+            if(this.game.keys.includes('ArrowLeft')){
+                this.speedY = this.maxSpeed * -3;
+                this.x += this.speedY;
+            }
             //bottom boundary
             if(this.y > this.game.height - this.height)
                 this.y = this.game.height - this.height;
@@ -72,7 +82,13 @@ window.addEventListener('load',function(){
                     this.y = this.game.height - 2.5 * this.height;
                     var audio = new Audio('assets/jump.mp3');
                     audio.play();
-                }          
+                } 
+            if(this.x > this.game.width - 12 * this.width){
+                this.x = this.game.width - 12 * this.width;
+                this.game.keys.splice(0,1);
+            } else if(this.x < 20){
+                this.x = 20 ;
+            }
         }
 
         draw(context){
@@ -231,6 +247,10 @@ window.addEventListener('load',function(){
                 context.fillText(message1, this.game.width * 0.5, this.game.height * 0.5 - 40);
                 context.font = '25px ' + this.fontFamily;
                 context.fillText(message2, this.game.width * 0.5, this.game.height * 0.5 + 40);
+                document.getElementsByTagName('h1')[0].style.display = "none";
+                document.getElementsByTagName('p')[0].style.display = "none";
+                document.getElementsByTagName('p')[1].style.display = "none";
+                document.getElementsByTagName('buttin')[0].style.display = "flex";
             }
             
             context.restore();
@@ -325,3 +345,5 @@ window.addEventListener('load',function(){
     }
     animate(0);
 });
+
+document.getElementById('replay').addEventListener('click', () => {window.location.reload();});
