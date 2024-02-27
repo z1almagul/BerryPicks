@@ -13,16 +13,54 @@ canvas{
     transform: translate(-50%, -50%);
 }
 
-h1, p{
-    text-align: center;
-    font-size: 20px;
+text-align: center;
+    font-size: 25px;
+    font-family: calibri;
     max-height: 10%;
+    color: purple;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    max-height: 80%;
+    transform: translate(-50%, -90%);
+    z-index: 1;
 }
 
 p{
-    font-size: 16px;
+    font-size: 18px;
+    transform: translate(-50%, -10%);
 }
 
 img{
     display: none;
+}
+
+button{
+    background-color: rgb(160, 216, 238);
+    border: 2px solid purple;
+    border-radius: 4px;
+    text-align: center;
+    padding: 2px;
+    font-size: 20px;
+    color: purple;
+    position: absolute;
+    top: 60%;
+    left: 45%;
+    max-width: 100%;
+    max-height: 80%;
+    display: none;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: rgb(177, 219, 236);
+    border: 2px solid rgb(152, 32, 152);
+    color: rgb(152, 32, 152);
+}
+
+button:active{
+    background-color: rgb(160, 216, 238);
+    border: 2px solid purple;
+    color: purple;
 }
