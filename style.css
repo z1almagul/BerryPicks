@@ -33,6 +33,10 @@ p{
     transform: translate(-50%, -10%);
 }
 
+p: last-of-type{
+    transform: translate(-50%, 20%);
+}
+
 img{
     display: none;
 }
