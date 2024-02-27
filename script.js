@@ -250,7 +250,7 @@ window.addEventListener('load',function(){
                 document.getElementsByTagName('h1')[0].style.display = "none";
                 document.getElementsByTagName('p')[0].style.display = "none";
                 document.getElementsByTagName('p')[1].style.display = "none";
-                document.getElementsByTagName('buttin')[0].style.display = "flex";
+                document.getElementsByTagName('button')[0].style.display = "flex";
             }
             
             context.restore();
