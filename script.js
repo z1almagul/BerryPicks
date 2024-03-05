@@ -237,10 +237,10 @@ window.addEventListener('load',function(){
                 let message1, message2;
                 if(this.game.catsSaved === 10){
                     message1 = "You won!"
-                    message2 = "Refresh to replay."
+                    message2 = "Congrats!!!"
                 }else{
                     message1 = 'You lost!';
-                    message2 = 'Refresh to try again!';
+                    message2 = 'Why not try one more time?';
                 }
                 
                 context.font = '50px ' + this.fontFamily;
