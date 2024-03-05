@@ -16,7 +16,7 @@ window.addEventListener('load',function(){
                     this.game.keys.push(e.key);
                 document.getElementsByTagName('h1')[0].style.display = "none";
                 document.getElementsByTagName('p')[0].style.display = "none";
-                document.getElementsByTagName('p')[1].style.display = "none";
+                //document.getElementsByTagName('p')[1].style.display = "none";
             });
             window.addEventListener('keyup', e => {
                 if(this.game.keys.indexOf(e.key) > -1){
@@ -28,7 +28,7 @@ window.addEventListener('load',function(){
                     this.game.keys.push(' ');
                 document.getElementsByTagName('h1')[0].style.display = "none";
                 document.getElementsByTagName('p')[0].style.display = "none";
-                document.getElementsByTagName('p')[1].style.display = "none";
+                //document.getElementsByTagName('p')[1].style.display = "none";
             });
             window.addEventListener("touchend", e=>{
                 if(this.game.keys.indexOf(' ') > -1){
@@ -249,7 +249,7 @@ window.addEventListener('load',function(){
                 context.fillText(message2, this.game.width * 0.5, this.game.height * 0.5 + 40);
                 document.getElementsByTagName('h1')[0].style.display = "none";
                 document.getElementsByTagName('p')[0].style.display = "none";
-                document.getElementsByTagName('p')[1].style.display = "none";
+                //document.getElementsByTagName('p')[1].style.display = "none";
                 document.getElementsByTagName('button')[0].style.display = "flex";
             }
             
